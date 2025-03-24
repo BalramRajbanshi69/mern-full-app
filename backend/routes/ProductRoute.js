@@ -1,8 +1,8 @@
 const express = require("express");
-const FetchUser = require("../middleware/FetchUser");
 const ProductModal = require("../model/ProductModal");
 const router = express.Router();
 const { body, validationResult } = require("express-validator");
+const FetchUser = require("../middleware/Fetchuser");
 
 // create or add products
 router.post(

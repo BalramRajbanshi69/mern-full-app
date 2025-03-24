@@ -11,8 +11,8 @@ router.post('/contactsubmit', async(req,res)=>{
       email,
       phone,
       subject,
-      message
-    })
+      message,
+    });
     await contact.save()
     res.status(201).json({message: 'Contact submitted successfully'})
   } catch (error) {

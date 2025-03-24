@@ -69,8 +69,7 @@ app.use("/api/contact", require("./routes/Contact_route"));
 app.use("/api/cart", require("./routes/Cart_route")); 
 //middleware
 app.use(logger);
-//middleware
-app.use(logger);
+
 
 // this is middleware , is a function that executes before routing /, /profile,/contact
 // req=> is client/user data sending to server

@@ -53,13 +53,16 @@
 
 
 
-import React, { useState } from "react";
-import Navbar from "./Components/Navbar";
+//grok
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./Context/AuthContext";
+import { CartProvider } from "./Context/CartContext";
+import ProductProvider from "./Context/ProductProvider";
+import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
 import Contact from "./Components/Contact";
 import Services from "./Components/Services";
-import ProductProvider from "./Context/ProductProvider";
 import CartList from "./Components/CartList";
 import Profile from "./Components/Profile";
 import AddProduct from "./Components/AddProduct";
@@ -67,13 +70,12 @@ import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
 import Toast from "./ToastComponent/Toast";
 import SearchResult from "./Components/SearchResult";
-import { AuthProvider } from "./Context/AuthContext";
 
 const App = () => {
   return (
-    <>
-      <AuthProvider>
+    <AuthProvider>
         <ProductProvider>
+      <CartProvider>
           <BrowserRouter>
             <Navbar />
             <Toast />
@@ -91,9 +93,9 @@ const App = () => {
               </Routes>
             </div>
           </BrowserRouter>
+      </CartProvider>
         </ProductProvider>
-      </AuthProvider>
-    </>
+    </AuthProvider>
   );
 };
 
